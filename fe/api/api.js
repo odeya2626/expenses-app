@@ -20,7 +20,8 @@ export const getUser = () => api.get("/user");
 export const logout = () => api.post("/logout");
 
 // All req for expenses
-export const getExpenses = () => api.get(`/expenses`);
+export const getExpenses = (limit, offset) =>
+  api.get(`/expenses?limit=${limit}&offset=${offset}`);
 export const addExpense = (expense) => api.post("/expenses", expense);
 export const updateExpense = (id, expense) =>
   api.put(`/expenses/${id}`, expense);

@@ -22,14 +22,24 @@ func GetUserExpenses(c *fiber.Ctx) error {
 			"message": "Unauthorized",
 		})
 	}
+	limit, err := strconv.Atoi(c.Query("limit"))
+	if err != nil || limit <= 0 {
+		limit = 10 // Default limit if not provided or invalid
+	}
+
+	offset, err := strconv.Atoi(c.Query("page"))
+	if err != nil || offset < 0 {
+		offset = 0 // Default page if not provided or invalid
+	}
 
 	expenses := []models.Expense{}
-	 if err := models.DB.Where("user_id = ?", user_id).Order("date DESC").Find(&expenses).Error; err != nil {
+	 if err := models.DB.Where("user_id = ?", user_id).Order("date DESC").Limit(limit).Offset(offset).Find(&expenses).Error; err != nil {
         return err
     }
+	hasMoreData := len(expenses) == limit
 
 	return c.Status(fiber.StatusOK).JSON(fiber.Map{
-		"data": expenses,})
+		"data": expenses, "hasMoreData": hasMoreData,})
 }
 
 func AddExpense(c *fiber.Ctx) error {

@@ -20,6 +20,10 @@ export const useExpenses = () => useContext(ExpensesContext);
 
 export default function ExpensesContextProvider({ children }) {
   const [expenses, setExpenses] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [limit, setLimit] = useState(10);
+  const [offset, setOffset] = useState(0);
+  const [hasMore, setHasMore] = useState(true);
   const handleSetExpenses = (expenses) => {
     setExpenses(expenses);
   };
@@ -69,14 +73,20 @@ export default function ExpensesContextProvider({ children }) {
 
   const getUserExpenses = async () => {
     try {
-      const res = await getExpenses();
+      hasMore && setIsLoading(true);
+      const res = await getExpenses(limit, offset);
       const expenses = res?.data?.data;
+      const hasMoreData = res?.data?.hasMoreData;
 
       if (res.status == 200) {
         setExpenses(expenses);
+        setOffset((prevOffset) => prevOffset + 1);
+        setHasMore(hasMoreData);
       }
     } catch (err) {
       Alert.alert("Error", err?.response?.data?.message);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -91,6 +101,7 @@ export default function ExpensesContextProvider({ children }) {
     handleUpdateExpense: handleUpdateExpense,
     handleDeleteExpense: handleDeleteExpense,
     getUserExpenses: getUserExpenses,
+    isLoading: isLoading,
   };
 
   return (
