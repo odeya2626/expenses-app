@@ -17,6 +17,6 @@ Data Persistence: All data is stored securely in the Postgres database.
 
 ## Technologies Used
 
-Frontend: React Native, Expo
-Backend: Go, Fiber
-Database: Postgres, GORM
+- Frontend: React Native, Expo
+- Backend: Go, Fiber
+- Database: Postgres, GORM
