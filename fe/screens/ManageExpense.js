@@ -18,14 +18,15 @@ export default function ManageExpense({ route, navigation }) {
   useLayoutEffect(() => {
     navigation.setOptions({
       title: isEditMode ? "Edit Expense" : "Add Expense",
-      headerRight: ({ tintColor }) => (
-        <IconBtn
-          icon="trash"
-          size={24}
-          color={tintColor}
-          onPress={handleDelete}
-        />
-      ),
+      headerRight: ({ tintColor }) =>
+        isEditMode && (
+          <IconBtn
+            icon="trash"
+            size={24}
+            color={tintColor}
+            onPress={handleDelete}
+          />
+        ),
     });
   }, [navigation, isEditMode]);
 
