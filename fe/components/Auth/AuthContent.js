@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 32,
     padding: 16,
     borderRadius: 8,
-    backgroundColor: GlobalStyles.colors.primary300,
+    backgroundColor: GlobalStyles.colors.primary800,
     elevation: 2,
     shadowColor: "black",
     shadowOffset: { width: 1, height: 1 },

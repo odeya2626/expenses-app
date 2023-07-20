@@ -18,6 +18,14 @@ export default function ManageExpense({ route, navigation }) {
   useLayoutEffect(() => {
     navigation.setOptions({
       title: isEditMode ? "Edit Expense" : "Add Expense",
+      headerRight: ({ tintColor }) => (
+        <IconBtn
+          icon="trash"
+          size={24}
+          color={tintColor}
+          onPress={handleDelete}
+        />
+      ),
     });
   }, [navigation, isEditMode]);
 
@@ -47,17 +55,6 @@ export default function ManageExpense({ route, navigation }) {
         onSubmit={onSubmit}
         defaultValues={selectedExpense}
       />
-
-      <View style={styles.deleteContainer}>
-        {isEditMode && (
-          <IconBtn
-            icon="trash"
-            color={GlobalStyles.colors.primary500}
-            size={36}
-            onPress={handleDelete}
-          />
-        )}
-      </View>
     </View>
   );
 }
@@ -65,13 +62,6 @@ const styles = StyleSheet.create({
   constainer: {
     flex: 1,
     padding: 24,
-    backgroundColor: GlobalStyles.colors.primary100,
-  },
-  deleteContainer: {
-    marginTop: 16,
-    paddingTop: 8,
-    // borderTopWidth: 2,
-    // borderTopColor: GlobalStyles.colors.primary500,
-    alignItems: "center",
+    backgroundColor: GlobalStyles.colors.primary200,
   },
 });

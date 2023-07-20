@@ -40,7 +40,8 @@ const styles = StyleSheet.create({
   input: {
     paddingVertical: 8,
     paddingHorizontal: 6,
-    backgroundColor: GlobalStyles.colors.primary300,
+    backgroundColor: GlobalStyles.colors.primary0,
+    color: GlobalStyles.colors.primary800,
     borderRadius: 4,
     fontSize: 16,
   },

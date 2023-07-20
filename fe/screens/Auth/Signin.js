@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { StyleSheet, View } from "react-native";
 import { signin } from "../../api/api";
 import AuthContent from "../../components/Auth/AuthContent";
 import LoadingOverlay from "../../components/UI/LoadingOverlay";
 import { useAuth } from "../../context/authContext";
 import { useExpenses } from "../../context/expensesContext";
+import { GlobalStyles } from "../../constants/styles";
 
 export default function Signin() {
   const { authenticate } = useAuth();
@@ -30,11 +32,20 @@ export default function Signin() {
     setMessage(message);
   };
   return (
-    <AuthContent
-      isLogin
-      onAuthenticate={handleSignin}
-      message={message}
-      handleSetMessage={handleSetMessage}
-    />
+    <View style={styles.constainer}>
+      <AuthContent
+        isLogin
+        onAuthenticate={handleSignin}
+        message={message}
+        handleSetMessage={handleSetMessage}
+      />
+    </View>
   );
 }
+const styles = StyleSheet.create({
+  constainer: {
+    flex: 1,
+    padding: 24,
+    backgroundColor: GlobalStyles.colors.primary200,
+  },
+});

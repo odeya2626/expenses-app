@@ -26,10 +26,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
     paddingTop: 24,
     paddingBottom: 0,
-    backgroundColor: GlobalStyles.colors.primary100,
+    backgroundColor: GlobalStyles.colors.primary200,
   },
   fallbackContent: {
-    color: GlobalStyles.colors.primary400,
+    color: GlobalStyles.colors.primary0,
     textAlign: "center",
     marginTop: 32,
     fontSize: 16,

@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   container: {
     padding: 10,
     marginBottom: 10,
-    backgroundColor: GlobalStyles.colors.primary100,
+    backgroundColor: GlobalStyles.colors.primary500,
     borderRadius: 6,
     flexDirection: "row",
     justifyContent: "space-between",
@@ -26,11 +26,11 @@ const styles = StyleSheet.create({
   },
   period: {
     fontSize: 12,
-    color: GlobalStyles.colors.primary500,
+    color: GlobalStyles.colors.primary0,
   },
   sum: {
     fontSize: 16,
     fontWeight: "bold",
-    color: GlobalStyles.colors.primary500,
+    color: GlobalStyles.colors.primary0,
   },
 });

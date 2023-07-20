@@ -23,9 +23,9 @@ function AuthStack() {
   return (
     <Stack.Navigator
       screenOptions={{
-        headerStyle: { backgroundColor: GlobalStyles.colors.primary500 },
+        headerStyle: { backgroundColor: GlobalStyles.colors.primary800 },
         headerTintColor: "white",
-        contentStyle: { backgroundColor: GlobalStyles.colors.primary100 },
+        contentStyle: { backgroundColor: GlobalStyles.colors.primary0 },
       }}
     >
       <Stack.Screen name="Signin" component={Signin} />
@@ -38,9 +38,9 @@ function AuthenticatedStack() {
   return (
     <Stack.Navigator
       screenOptions={{
-        headerStyle: { backgroundColor: GlobalStyles.colors.primary500 },
+        headerStyle: { backgroundColor: GlobalStyles.colors.primary800 },
         headerTintColor: "white",
-        contentStyle: { backgroundColor: GlobalStyles.colors.primary100 },
+        contentStyle: { backgroundColor: GlobalStyles.colors.primary0 },
       }}
     >
       <Stack.Screen
@@ -99,13 +99,13 @@ function ExpensesOverview() {
   return (
     <Tab.Navigator
       screenOptions={({ navigation }) => ({
-        headerStyle: { backgroundColor: GlobalStyles.colors.primary50 },
-        headerTintColor: GlobalStyles.colors.primary800,
+        headerStyle: { backgroundColor: GlobalStyles.colors.primary800 },
+        headerTintColor: GlobalStyles.colors.primary0,
         tabBarStyle: {
-          backgroundColor: GlobalStyles.colors.primary50,
-          color: GlobalStyles.colors.white,
+          backgroundColor: GlobalStyles.colors.primary800,
+          color: GlobalStyles.colors.primary0,
         },
-        tabBarActiveTintColor: GlobalStyles.colors.active,
+        tabBarActiveTintColor: GlobalStyles.colors.primary0,
         tabBarInactiveTintColor: GlobalStyles.colors.primary400,
         headerRight: ({ tintColor }) => (
           <IconBtn
@@ -144,34 +144,3 @@ function ExpensesOverview() {
     </Tab.Navigator>
   );
 }
-
-// export default function App() {
-//   return (
-//     <>
-//       <StatusBar style="light" />
-//       <ExpensesContextProvider>
-//         <NavigationContainer>
-//           <Stack.Navigator
-//             screenOptions={{
-//               headerStyle: { backgroundColor: GlobalStyles.colors.primary50 },
-//               headerTintColor: GlobalStyles.colors.primary800,
-//             }}
-//           >
-//             <Stack.Screen
-//               name="ExpensesOverview"
-//               component={ExpensesOverview}
-//               options={{ headerShown: false }}
-//             />
-//             <Stack.Screen
-//               name="ManageExpense"
-//               component={ManageExpense}
-//               options={{
-//                 presentation: "modal",
-//               }}
-//             />
-//           </Stack.Navigator>
-//         </NavigationContainer>
-//       </ExpensesContextProvider>
-//     </>
-//   );
-// }

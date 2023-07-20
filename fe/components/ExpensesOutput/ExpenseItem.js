@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
   expeenseItem: {
     padding: 10,
     marginVertical: 10,
-    backgroundColor: GlobalStyles.colors.primary100,
+    backgroundColor: GlobalStyles.colors.primary800,
     flexDirection: "row",
     justifyContent: "space-between",
     borderRadius: 6,
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.4,
   },
   textBase: {
-    color: GlobalStyles.colors.primary500,
+    color: GlobalStyles.colors.primary0,
   },
   title: {
     fontWeight: "bold",
@@ -53,13 +53,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     paddingVertical: 4,
     borderRadius: 4,
-    backgroundColor: GlobalStyles.colors.primary400,
+    backgroundColor: GlobalStyles.colors.primary0,
     alignItems: "center",
     justifyContent: "center",
     minWidth: 80,
   },
   amountText: {
-    color: GlobalStyles.colors.primary500,
+    color: GlobalStyles.colors.primary800,
     fontWeight: "bold",
   },
 });

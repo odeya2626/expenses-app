@@ -27,15 +27,15 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 12,
-    color: GlobalStyles.colors.primary500,
+    color: GlobalStyles.colors.primary0,
     marginBottom: 10,
   },
   input: {
-    backgroundColor: GlobalStyles.colors.primary300,
+    backgroundColor: GlobalStyles.colors.primary800,
     borderRadius: 6,
     padding: 6,
     fontSize: 18,
-    color: GlobalStyles.colors.primary500,
+    color: GlobalStyles.colors.primary0,
   },
   inputMultiline: {
     minHeight: 100,

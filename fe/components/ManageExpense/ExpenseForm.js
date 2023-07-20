@@ -161,7 +161,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 22,
     fontWeight: "bold",
-    color: GlobalStyles.colors.primary500,
+    color: GlobalStyles.colors.primary0,
     textAlign: "center",
     marginVertical: 10,
   },
